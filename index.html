@@ -152,11 +152,11 @@ p{margin:0}
 .rung:hover{background:var(--bg-3)}
 .rung .n{font-family:var(--display);font-size:.7rem;color:var(--muted);letter-spacing:.2em}
 .rung h3{font-size:1.15rem}
-.rung p{font-size:.9rem;color:var(--ink-2);flex:1}
+.rung p{font-size:.9rem;color:var(--ink-2)}
 .rung .ir{height:6px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
 .rung .ir i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue-deep),var(--blue));transition:width 1.1s var(--ease)}
 .rung.in .ir i{width:var(--w)}
-.rung .spec{display:flex;justify-content:space-between;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rung .specs{display:grid;gap:.35rem;margin-top:auto}.rung .spec{display:flex;justify-content:space-between;gap:.6rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.rung .spec span:last-child{color:var(--ink);font-family:var(--display);font-size:.72rem;letter-spacing:.02em;text-transform:none;text-align:right}.foot{font-size:.8rem;color:var(--muted);margin-top:1rem;max-width:70ch}
 .rung.top{background:linear-gradient(180deg,rgba(30,167,255,.14),rgba(30,167,255,.03))}
 .rung.top::before{content:"BEST";position:absolute;top:1rem;right:1rem;font-family:var(--display);font-size:.62rem;letter-spacing:.2em;color:#0b1200;background:var(--lime);padding:.25rem .5rem;border-radius:6px}
 /* pricing */
@@ -185,7 +185,7 @@ p{margin:0}
 /* gallery */
 .gal{columns:4;column-gap:.8rem}
 .gal figure{margin:0 0 .8rem;break-inside:avoid;position:relative;border-radius:14px;overflow:hidden;background:var(--bg-3)}
-.gal img{width:100%;transition:transform .9s var(--ease);aspect-ratio:var(--ar,4/3);object-fit:cover}
+.gal img{width:100%;height:auto;display:block;transition:transform .9s var(--ease)}
 .gal figure:hover img{transform:scale(1.06)}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .8rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:linear-gradient(0deg,rgba(7,9,13,.9),transparent);opacity:0;transform:translateY(6px);transition:.4s var(--ease)}
 .gal figure:hover figcaption{opacity:1;transform:none}
@@ -388,14 +388,16 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
       </div>
       <div class="series" role="group" aria-label="Film series">
         <button type="button" data-s="0" aria-pressed="false">Carbon</button>
-        <button type="button" data-s="1" aria-pressed="false">Carbon Plus</button>
-        <button type="button" data-s="2" aria-pressed="false">King Pro</button>
+        <button type="button" data-s="1" aria-pressed="false">King Pro</button>
+        <button type="button" data-s="2" aria-pressed="false">Carbon Plus</button>
         <button type="button" data-s="3" aria-pressed="true">Shield IR</button>
         <button type="button" data-s="4" aria-pressed="false">Shield Plus</button>
       </div>
       <div class="heat">
-        <div class="row"><span>Infrared heat rejection</span><b id="rHeat">Very high</b></div>
+        <div class="row"><span>Infrared rejection (Scorpion data)</span><b id="rHeat">82–87%</b></div>
         <div class="bar"><i id="heatBar"></i></div>
+        <div class="row" style="margin-top:.5rem"><span>Shades offered</span><b id="rShades">5 · 15 · 20 · 35 · 40 · 50</b></div>
+        <div class="row"><span>Your shade</span><b id="rOffer">35% is a stock shade</b></div>
       </div>
     </div>
   </div>
@@ -415,15 +417,16 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow rv">Scorpion window film · five series</p><h2 class="rv d1">Pick your <span class="chrome">heat rejection.</span></h2></div>
-      <p class="rv d2">Every series is dual-ply, signal-friendly film that blocks 99% of UV. Move up the ladder for more infrared rejection and a cooler cabin. All of it carries a lifetime warranty.</p>
+      <p class="rv d2">Every series is 2-ply, 1.5 mil Scorpion film that blocks 99% of UV, is signal-friendly, and carries a lifetime warranty. Move up the ladder for more infrared rejection and a cooler cabin.</p>
     </div>
     <div class="ladder">
-      <article class="rung rv" style="--w:38%"><span class="n">01</span><h3>Carbon</h3><p>Color-stable carbon deposit technology. More fade protection and heat rejection than dyed film, with a classic look. Six shades.</p><div class="ir"><i></i></div><div class="spec"><span>IR rejection</span><span>Good</span></div></article>
-      <article class="rung rv d1" style="--w:52%"><span class="n">02</span><h3>Carbon Plus</h3><p>Everything drivers love about Carbon with a higher infrared rejection rating and an even smoother install.</p><div class="ir"><i></i></div><div class="spec"><span>IR rejection</span><span>Better</span></div></article>
-      <article class="rung rv d2" style="--w:64%"><span class="n">03</span><h3>King Pro</h3><p>Carbon-metalized construction for sharp optical clarity and a premium, head-turning finish. Five shades.</p><div class="ir"><i></i></div><div class="spec"><span>IR rejection</span><span>High</span></div></article>
-      <article class="rung rv d3" style="--w:82%"><span class="n">04</span><h3>Shield IR</h3><p>Nano-ceramic film engineered to perform across the solar spectrum, from 250 nm to 2500 nm. Ultimate UV protection.</p><div class="ir"><i></i></div><div class="spec"><span>IR rejection</span><span>Very high</span></div></article>
-      <article class="rung top rv d4" style="--w:95%"><span class="n">05</span><h3>Shield Plus</h3><p>Top of the line. A 95% infrared cut at every shade level. Maximum comfort for South Carolina summers.</p><div class="ir"><i></i></div><div class="spec"><span>IR rejection</span><span>95%</span></div></article>
+      <article class="rung rv" style="--w:35%"><span class="n">01 · ENTRY</span><h3>Carbon</h3><p>True carbon deposit, no dyes, no metal. The classic tint look that never turns purple.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>35%</span></div><div class="spec"><span>Total solar energy</span><span>56%</span></div><div class="spec"><span>Shades</span><span>3·5·15·20·35·40·50·70</span></div></div><div class="ir"><i></i></div></article>
+      <article class="rung rv d1" style="--w:50%"><span class="n">02 · CLARITY</span><h3>King Pro</h3><p>Carbon-metalized for the sharpest optical clarity and a premium finish. Still signal-friendly.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>48–50%</span></div><div class="spec"><span>Total solar energy</span><span>—</span></div><div class="spec"><span>Shades</span><span>5·15·20·35·50</span></div></div><div class="ir"><i></i></div></article>
+      <article class="rung rv d2" style="--w:62%"><span class="n">03 · UPGRADE</span><h3>Carbon Plus</h3><p>Color-stable carbon with a higher infrared rating and a smoother, cleaner install.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>62%</span></div><div class="spec"><span>Total solar energy</span><span>59%</span></div><div class="spec"><span>Shades</span><span>5·15·20·35·40·50</span></div></div><div class="ir"><i></i></div></article>
+      <article class="rung rv d3" style="--w:87%"><span class="n">04 · CERAMIC</span><h3>Shield IR</h3><p>Nano-ceramic film engineered across the solar spectrum, 250 nm to 2500 nm. No metal, no dye.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>82–87%</span></div><div class="spec"><span>Total solar energy</span><span>52–66%</span></div><div class="spec"><span>Shades</span><span>5·15·20·35·40·50</span></div></div><div class="ir"><i></i></div></article>
+      <article class="rung top rv d4" style="--w:95%"><span class="n">05 · TOP</span><h3>Shield Plus</h3><p>Scorpion's flagship nano-ceramic. The highest infrared cut at every shade, including the near-clear 70%.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>93–95%</span></div><div class="spec"><span>Total solar energy</span><span>53–70%</span></div><div class="spec"><span>Shades</span><span>5·15·20·35·40·50·70</span></div></div><div class="ir"><i></i></div></article>
     </div>
+    <p class="foot rv">Manufacturer-published performance (Scorpion Window Film). Infrared and total-solar figures vary by shade; single values are the darkest published shade. Ask your shop for the spec sheet on the exact shade you choose.</p>
   </div>
 </section>
 
@@ -625,10 +628,10 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
   $$('[data-count]').forEach(el=>cio.observe(el));
   /* shade lab */
   const vlt=$('#vlt'),g1=$('#g1'),g2=$('#g2'),rV=$('#rVlt'),rL=$('#rLaw'),rK=$('#rLook'),rH=$('#rHeat'),hb=$('#heatBar');
-  const SERIES=[['Carbon','Good',38],['Carbon Plus','Better',52],['King Pro','High',64],['Shield IR','Very high',82],['Shield Plus','95% IR cut',95]];
+  const SERIES=[['Carbon','35%',35,[3,5,15,20,35,40,50,70]],['King Pro','48–50%',50,[5,15,20,35,50]],['Carbon Plus','62%',62,[5,15,20,35,40,50]],['Shield IR','82–87%',87,[5,15,20,35,40,50]],['Shield Plus','93–95%',95,[5,15,20,35,40,50,70]]];
   let s=3;
   const look=v=>v>=60?'Nearly clear':v>=45?'Light':v>=30?'Factory+':v>=15?'Dark':'Limo';
-  const render=()=>{const v=+vlt.value;const a=1-(v/100);g1.setAttribute('fill-opacity',(a*.92).toFixed(3));g2.setAttribute('fill-opacity',(a*.92).toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='Legal';rL.className='ok'}else{rL.textContent='Rear only';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%'};
+  const render=()=>{const v=+vlt.value;const a=1-(v/100);g1.setAttribute('fill-opacity',(a*.92).toFixed(3));g2.setAttribute('fill-opacity',(a*.92).toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='Legal';rL.className='ok'}else{rL.textContent='Rear only';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%';const sh=SERIES[s][3];$('#rShades').textContent=sh.join(' · ');const near=sh.reduce((a,b)=>Math.abs(b-v)<Math.abs(a-v)?b:a);$('#rOffer').textContent=sh.includes(v)?v+'% is a stock shade':'closest stock shade is '+near+'%'};
   vlt.addEventListener('input',render);
   $$('.series button').forEach(b=>b.addEventListener('click',()=>{$$('.series button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');s=+b.dataset.s;render()}));
   render();
