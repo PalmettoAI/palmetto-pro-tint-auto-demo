@@ -122,6 +122,7 @@ p{margin:0}
 .slider::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--lime);border:4px solid #0b1200;box-shadow:0 0 0 4px rgba(200,255,61,.25),0 6px 16px rgba(0,0,0,.5);cursor:grab}
 .slider::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--lime);border:4px solid #0b1200;box-shadow:0 0 0 4px rgba(200,255,61,.25);cursor:grab}
 .ticks{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);font-family:var(--display);letter-spacing:.05em;margin-top:.2rem}
+.veh{display:flex;gap:.4rem;margin:.9rem 0 .2rem}.veh button{flex:1;font-size:.74rem;font-weight:700;padding:.5rem .6rem;border-radius:10px;border:1px solid var(--border-2);color:var(--ink-2);transition:.25s}.veh button[aria-pressed="true"]{background:var(--lime);color:#0b1200;border-color:var(--lime)}
 .series{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem}
 .series button{font-size:.74rem;font-weight:700;padding:.45rem .7rem;border-radius:999px;border:1px solid var(--border-2);color:var(--ink-2);transition:.25s}
 .series button[aria-pressed="true"]{background:var(--blue);color:#02111f;border-color:var(--blue)}
@@ -157,6 +158,7 @@ p{margin:0}
 .rung .ir i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue-deep),var(--blue));transition:width 1.1s var(--ease)}
 .rung.in .ir i{width:var(--w)}
 .rung .specs{display:grid;gap:.35rem;margin-top:auto}.rung .spec{display:flex;justify-content:space-between;gap:.6rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.rung .spec span:last-child{color:var(--ink);font-family:var(--display);font-size:.72rem;letter-spacing:.02em;text-transform:none;text-align:right}.foot{font-size:.8rem;color:var(--muted);margin-top:1rem;max-width:70ch}
+.spectrum{margin-top:3rem;border:1px solid var(--border-2);border-radius:var(--r);padding:2rem;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}.sp-head{display:grid;grid-template-columns:1fr;gap:.6rem;max-width:62ch;margin-bottom:1.6rem}.sp-head h3{font-size:1.5rem}.sp-head p:last-child{color:var(--ink-2)}.sp-bar{width:100%;height:auto;display:block}.sp-legend{display:flex;gap:1.5rem;margin-top:1rem;font-size:.82rem;color:var(--ink-2)}.sp-legend i{display:inline-block;width:14px;height:6px;border-radius:3px;margin-right:.5rem;vertical-align:middle}
 .rung.top{background:linear-gradient(180deg,rgba(30,167,255,.14),rgba(30,167,255,.03))}
 .rung.top::before{content:"BEST";position:absolute;top:1rem;right:1rem;font-family:var(--display);font-size:.62rem;letter-spacing:.2em;color:#0b1200;background:var(--lime);padding:.25rem .5rem;border-radius:6px}
 /* pricing */
@@ -181,6 +183,8 @@ p{margin:0}
 .step .k{font-family:var(--display);font-size:.7rem;color:var(--blue);letter-spacing:.2em}
 .step h3{margin:.4rem 0 .4rem}
 .step p{font-size:.9rem;color:var(--ink-2)}
+.signoff{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;margin-top:4rem}.signoff h3{font-size:clamp(1.4rem,2.4vw,2rem);margin:.6rem 0 .8rem}.signoff p:last-child{color:var(--ink-2);max-width:48ch}
+.tablet{background:#0B0F15;border:1px solid var(--border-2);border-radius:26px;padding:1.4rem 1.5rem;box-shadow:var(--shadow-lg),inset 0 0 0 6px #000;max-width:440px;margin-left:auto;font-size:.9rem}.tb-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--display);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}.tb-car{font-weight:700;margin-bottom:.8rem}.tb-list{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}.tb-list li{display:flex;justify-content:space-between;padding:.45rem .7rem;border-radius:10px;background:rgba(255,255,255,.04)}.tb-list b{color:var(--lime)}.tb-sign{display:flex;justify-content:space-between;align-items:center;margin-top:.9rem;padding:.7rem .8rem;border:1px dashed var(--border-2);border-radius:12px;color:var(--muted);font-size:.8rem}.tb-sign i{font-family:'Snell Roundhand','Brush Script MT',cursive;font-size:1.5rem;color:var(--ink)}.tb-foot{margin-top:.8rem;font-size:.76rem;color:var(--muted)}
 .step.new h3::after{content:"NEW";font-size:.55rem;letter-spacing:.2em;color:#0b1200;background:var(--lime);padding:.2rem .4rem;border-radius:5px;margin-left:.5rem;vertical-align:middle;font-family:var(--display)}
 /* gallery */
 .gal{columns:4;column-gap:.8rem}
@@ -276,7 +280,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
   .sec-head{grid-template-columns:1fr}
   .ladder{grid-template-columns:1fr 1fr}
   .price-grid{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr}.step::before{display:none}
+  .steps{grid-template-columns:1fr 1fr}.step::before{display:none}.signoff{grid-template-columns:1fr}.tablet{margin-left:0}
   .gal{columns:2}
   .locs{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}.law{position:static}
@@ -381,9 +385,10 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
       <label class="sr" for="vlt">Visible light transmission</label>
       <input class="slider" id="vlt" type="range" min="5" max="70" step="1" value="35" aria-valuetext="35 percent VLT">
       <div class="ticks" aria-hidden="true"><span>70%</span><span>50%</span><span>35%</span><span>20%</span><span>5%</span></div>
+      <div class="veh" role="group" aria-label="Vehicle type"><button type="button" data-v="sedan" aria-pressed="true">Sedan · coupe</button><button type="button" data-v="suv" aria-pressed="false">SUV · truck · van</button></div>
       <div class="lab-read" aria-live="polite">
         <div class="read"><small>Shade</small><b id="rVlt">35% VLT</b></div>
-        <div class="read"><small>SC sedan</small><b id="rLaw" class="ok">Legal</b></div>
+        <div class="read"><small>SC legal</small><b id="rLaw" class="ok">All windows</b></div>
         <div class="read"><small>Look</small><b id="rLook">Factory+</b></div>
       </div>
       <div class="series" role="group" aria-label="Film series">
@@ -427,6 +432,22 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
       <article class="rung top rv d4" style="--w:95%"><span class="n">05 · TOP</span><h3>Shield Plus</h3><p>Scorpion's flagship nano-ceramic. The highest infrared cut at every shade, including the near-clear 70%.</p><div class="specs"><div class="spec"><span>IR rejection</span><span>93–95%</span></div><div class="spec"><span>Total solar energy</span><span>53–70%</span></div><div class="spec"><span>Shades</span><span>5·15·20·35·40·50·70</span></div></div><div class="ir"><i></i></div></article>
     </div>
     <p class="foot rv">Manufacturer-published performance (Scorpion Window Film). Infrared and total-solar figures vary by shade; single values are the darkest published shade. Ask your shop for the spec sheet on the exact shade you choose.</p>
+    <div class="spectrum rv">
+      <div class="sp-head"><p class="eyebrow lime">Where the heat actually is</p><h3>Shade is what you see. Infrared is what you feel.</h3><p>Sunlight arrives in three bands. Every Scorpion series blocks 99% of UV. Your shade sets how much visible light comes through. The infrared band carries most of the heat, and that is the only number that separates a $249 film from a $349 one.</p></div>
+      <svg class="sp-bar" viewBox="0 0 1000 150" role="img" aria-label="Solar spectrum showing ultraviolet, visible and infrared bands with what each film series blocks">
+        <defs><linearGradient id="spG" x1="0" x2="1"><stop offset="0" stop-color="#6F3BFF"/><stop offset=".2" stop-color="#3D5BFF"/><stop offset=".27" stop-color="#2B8CFF"/><stop offset=".34" stop-color="#2BD4A5"/><stop offset=".41" stop-color="#F5E34B"/><stop offset=".48" stop-color="#FF6A3D"/><stop offset=".54" stop-color="#8A2F1C"/><stop offset="1" stop-color="#2A1208"/></linearGradient></defs>
+        <rect x="0" y="40" width="1000" height="34" rx="17" fill="url(#spG)"/>
+        <g font-family="Unbounded, sans-serif" font-size="11" letter-spacing="2" fill="#8B95A5">
+          <text x="0" y="24">UV · 250–380 NM</text><text x="222" y="24">VISIBLE · 380–780 NM</text><text x="542" y="24">INFRARED · 780–2500 NM</text>
+        </g>
+        <g font-family="Manrope, sans-serif" font-size="14" fill="#F4F6FA">
+          <text x="0" y="110">99% blocked, every series</text><text x="222" y="110">Your shade · VLT 5–70%</text><text x="542" y="110">Carbon 35% → Shield Plus 95% rejected</text>
+        </g>
+        <g stroke="#1EA7FF" stroke-width="2"><line x1="210" y1="34" x2="210" y2="80"/><line x1="530" y1="34" x2="530" y2="80"/></g>
+        <rect x="542" y="128" width="458" height="6" rx="3" fill="rgba(255,255,255,.08)"/><rect x="542" y="128" width="160" height="6" rx="3" fill="#1EA7FF"/><rect x="542" y="128" width="435" height="6" rx="3" fill="rgba(200,255,61,.55)"/>
+      </svg>
+      <div class="sp-legend"><span><i style="background:#1EA7FF"></i>Carbon · 35% IR</span><span><i style="background:rgba(200,255,61,.85)"></i>Shield Plus · 95% IR</span></div>
+    </div>
   </div>
 </section>
 
@@ -476,6 +497,16 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
       <div class="step rv d2"><span class="k">STEP 3</span><h3>Computer-cut film</h3><p>Patterns are cut for your exact make and model. No blades near your glass or gaskets.</p></div>
       <div class="step rv d3"><span class="k">STEP 4</span><h3>Hand install</h3><p>Deep-cleaned glass, heat-shrunk film, edges tucked under seals. Interior wiped down after.</p></div>
       <div class="step new rv d4"><span class="k">STEP 5</span><h3>Walk-around sign-off</h3><p>You inspect every window with the installer and sign off on a tablet before paying. You leave with aftercare instructions by text.</p></div>
+    </div>
+    <div class="signoff">
+      <div class="rv"><p class="eyebrow lime">The part other shops skip</p><h3>Nothing leaves until you've looked at every window.</h3><p>Before you pay, the installer walks the car with you. Each window gets a photo and a check. You initial the screen. If something isn't right, it gets redone on the spot, not argued about in a review three weeks later.</p></div>
+      <div class="tablet rv d1" role="img" aria-label="Mock-up of the walk-around sign-off screen with every window checked and customer initials">
+        <div class="tb-top"><span>Walk-around · Lexington bay 2</span><span>2:41 PM</span></div>
+        <div class="tb-car">2021 F-150 · Shield IR 20% rear · 35% front</div>
+        <ul class="tb-list"><li><span>Driver front</span><b>✓</b></li><li><span>Driver rear</span><b>✓</b></li><li><span>Passenger front</span><b>✓</b></li><li><span>Passenger rear</span><b>✓</b></li><li><span>Back glass</span><b>✓</b></li><li><span>Edges &amp; seals</span><b>✓</b></li><li><span>Interior wiped down</span><b>✓</b></li></ul>
+        <div class="tb-sign"><span>Customer initials</span><i>J.M.</i></div>
+        <div class="tb-foot">Aftercare text sent · windows up 3–5 days</div>
+      </div>
     </div>
   </div>
 </section>
@@ -629,11 +660,12 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
   /* shade lab */
   const vlt=$('#vlt'),g1=$('#g1'),g2=$('#g2'),rV=$('#rVlt'),rL=$('#rLaw'),rK=$('#rLook'),rH=$('#rHeat'),hb=$('#heatBar');
   const SERIES=[['Carbon','35%',35,[3,5,15,20,35,40,50,70]],['King Pro','48–50%',50,[5,15,20,35,50]],['Carbon Plus','62%',62,[5,15,20,35,40,50]],['Shield IR','82–87%',87,[5,15,20,35,40,50]],['Shield Plus','93–95%',95,[5,15,20,35,40,50,70]]];
-  let s=3;
+  let s=3,veh='sedan';
   const look=v=>v>=60?'Nearly clear':v>=45?'Light':v>=30?'Factory+':v>=15?'Dark':'Limo';
-  const render=()=>{const v=+vlt.value;const a=1-(v/100);g1.setAttribute('fill-opacity',(a*.92).toFixed(3));g2.setAttribute('fill-opacity',(a*.92).toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='Legal';rL.className='ok'}else{rL.textContent='Rear only';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%';const sh=SERIES[s][3];$('#rShades').textContent=sh.join(' · ');const near=sh.reduce((a,b)=>Math.abs(b-v)<Math.abs(a-v)?b:a);$('#rOffer').textContent=sh.includes(v)?v+'% is a stock shade':'closest stock shade is '+near+'%'};
+  const render=()=>{const v=+vlt.value;const a=1-(v/100);g1.setAttribute('fill-opacity',(a*.92).toFixed(3));g2.setAttribute('fill-opacity',(a*.92).toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='All windows';rL.className='ok'}else if(veh==='suv'){rL.textContent='Behind front doors';rL.className='ok'}else{rL.textContent='Too dark';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%';const sh=SERIES[s][3];$('#rShades').textContent=sh.join(' · ');const near=sh.reduce((a,b)=>Math.abs(b-v)<Math.abs(a-v)?b:a);$('#rOffer').textContent=sh.includes(v)?v+'% is a stock shade':'closest stock shade is '+near+'%'};
   vlt.addEventListener('input',render);
   $$('.series button').forEach(b=>b.addEventListener('click',()=>{$$('.series button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');s=+b.dataset.s;render()}));
+  $$('.veh button').forEach(b=>b.addEventListener('click',()=>{$$('.veh button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');veh=b.dataset.v;render()}));
   render();
   /* reviews */
   const R=[["Brittany Tucker","5 Stars!!!","Lexington"],["Christopher Bowen","Did a great job on my 2021 Hyundai Veloster N. Will be taking my son to get his done soon for his 2016 Veloster Turbo.","Lexington"],["Melinna Williams","I've used Palmetto Pro Tint for many years. Gotten all of our vehicles done with them and our bedroom house windows last year as well. Always wonderful work and fantastic customer service!","Columbia"],["Michael M.","I'm an old guy and never understood car tinting. I do now after dealing with these folks. Absolutely wonderful job on my 2009 Honda Civic at a reasonable price. Jade at the front desk is an absolute sweetheart.","Lexington"],["Jimmy F.","Awesome job guys! Quality work, and very professional group of people. Thank you!","Columbia"],["Google review","They tinted my front two windows and visor strip and it turned out amazingly. It took less than 30 mins. They were so professional and hospitable. The price was great!","Lexington"],["Google review","I stopped by the Tuesday before July 4th to get an estimate for tinting all the windows and panoramic roof on my truck. He booked me for Thursday at 1 PM, the day before the holiday.","Northeast"],["Google review","Great job! Went to the Two Notch location for my previous car but came to Taylor St. for the convenience. They were able to get me in and out the same day.","Downtown"],["Google review","Just washed the car after 5 days and used the windows. Tint looks great. Lifetime warranty, no purple over time, no metal and heat resistant.","Downtown"],["Google review","Did a perfect job on my Lexus RX350. Clean, affordable, quick.","Downtown"],["Google review","The location on Taylor Street is fantastic. I called and got an appointment for the very next day, no problem. Polite and upfront about everything.","Downtown"],["Google review","They actually have knowledge of what needs to be done when it comes to tinting vehicles. Had my wife's Avalanche and my Tahoe done the same day.","Northeast"]];
