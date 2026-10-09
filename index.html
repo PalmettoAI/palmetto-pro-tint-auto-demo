@@ -359,31 +359,50 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
         <h2 id="labTitle">Shade Lab</h2>
         <span class="tag">Drag to preview</span>
       </div>
-      <svg class="car" viewBox="0 0 800 300" role="img" aria-label="Side profile of a coupe showing the selected tint darkness on its windows">
+      <svg class="car" viewBox="0 0 800 300" role="img" aria-label="Side profile of a sports sedan showing the selected tint darkness on its side windows; the windshield stays clear as South Carolina law requires">
         <defs>
-          <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A313C"/><stop offset=".55" stop-color="#11161E"/><stop offset="1" stop-color="#05070A"/></linearGradient>
-          <linearGradient id="glassBase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCEBFA"/><stop offset=".5" stop-color="#9FC3E6"/><stop offset="1" stop-color="#C9DDF2"/></linearGradient>
-          <linearGradient id="refl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A4250"/><stop offset=".35" stop-color="#1B2029"/><stop offset=".7" stop-color="#0E1117"/><stop offset="1" stop-color="#05070A"/></linearGradient>
+          <linearGradient id="glassBase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6F1FB"/><stop offset=".5" stop-color="#A9C9E8"/><stop offset="1" stop-color="#D3E4F4"/></linearGradient>
+          <linearGradient id="refl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
           <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1EA7FF" stop-opacity="0"/><stop offset=".5" stop-color="#1EA7FF" stop-opacity=".5"/><stop offset="1" stop-color="#1EA7FF" stop-opacity="0"/></linearGradient>
+          <radialGradient id="rimG" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#C9D1DC"/><stop offset=".6" stop-color="#6B7482"/><stop offset="1" stop-color="#2A313C"/></radialGradient>
+          <linearGradient id="shoulder" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset=".8" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
         </defs>
-        <path d="M30 236c0-34 24-50 74-56l96-10c48-64 118-96 210-96 86 0 154 26 212 86l88 12c40 6 60 26 60 58v16c0 10-8 18-18 18H48c-10 0-18-8-18-18z" fill="url(#bodyG)"/>
-        <path d="M212 170c40-54 102-82 196-82 78 0 140 22 196 78" fill="none" stroke="#3B4452" stroke-width="2"/>
-        <path d="M236 178l64-66c36-18 86-26 124-26l0 92z" fill="url(#glassBase)"/>
-        <path d="M236 178l64-66c36-18 86-26 124-26l0 92z" class="glass" fill="#0B1118" fill-opacity=".8" id="g1"/>
-        <path d="M436 86c44 0 96 10 140 40l44 52H436z" fill="url(#glassBase)"/>
-        <path d="M436 86c44 0 96 10 140 40l44 52H436z" class="glass" fill="#0B1118" fill-opacity=".8" id="g2"/>
-        <path d="M250 174l60-62c34-16 78-22 112-22v6c-34 0-76 6-108 22l-56 56z" fill="url(#refl)" opacity=".6"/>
-        <path d="M440 90c42 0 92 10 134 38l40 48h-8l-38-44c-40-26-88-36-128-36z" fill="url(#refl)" opacity=".5"/>
-        <rect x="424" y="86" width="12" height="92" fill="#0A0D12"/>
-        <path d="M30 236h740" stroke="#2B3340" stroke-width="2"/>
-        <path d="M60 196h120" stroke="#3B4452" stroke-width="3" stroke-linecap="round"/>
-        <path d="M620 196h140" stroke="#3B4452" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="200" cy="236" r="44" fill="#07090D"/><circle cx="200" cy="236" r="30" fill="#1C222B"/><circle cx="200" cy="236" r="12" fill="#3B4452"/>
-        <circle cx="600" cy="236" r="44" fill="#07090D"/><circle cx="600" cy="236" r="30" fill="#1C222B"/><circle cx="600" cy="236" r="12" fill="#3B4452"/>
-        <ellipse cx="400" cy="286" rx="330" ry="6" fill="url(#ground)"/>
+        <!-- body -->
+        <path d="M58 222 C42 222 34 206 38 190 L48 170 C66 148 110 136 176 130 L246 124 C286 84 346 66 428 66 C506 66 562 78 612 112 C650 130 700 142 732 150 C762 156 772 182 766 206 L758 222 L664 226 A52 52 0 0 1 560 226 L234 226 A52 52 0 0 1 130 226 Z" fill="url(#bodyG)"/>
+        <!-- shoulder line highlight -->
+        <path d="M70 158 C160 148 420 140 740 156" fill="none" stroke="url(#shoulder)" stroke-width="2.5"/>
+        <!-- rocker -->
+        <path d="M118 216 L646 216 L644 224 L124 224 Z" fill="#05070A" opacity=".8"/>
+        <!-- windshield: clear with light strip (not tintable) -->
+        <path d="M256 124 L338 72 L354 72 L292 124 Z" fill="url(#glassBase)"/>
+        <path d="M256 124 L338 72 L354 72 L292 124 Z" fill="#0B1118" fill-opacity=".18"/>
+        <!-- front door glass (tintable) -->
+        <path d="M300 122 L356 76 L456 70 L456 122 Z" fill="url(#glassBase)"/>
+        <path d="M300 122 L356 76 L456 70 L456 122 Z" class="glass" fill="#0B1118" fill-opacity=".8" id="g1"/>
+        <!-- rear quarter + rear glass (tintable) -->
+        <path d="M470 122 L470 72 C520 72 566 80 604 108 L630 124 Z" fill="url(#glassBase)"/>
+        <path d="M470 122 L470 72 C520 72 566 80 604 108 L630 124 Z" class="glass" fill="#0B1118" fill-opacity=".8" id="g2"/>
+        <!-- reflections -->
+        <path d="M312 118 L360 80 L420 76 L404 118 Z" fill="url(#refl)" opacity=".55"/>
+        <path d="M486 118 L486 78 C520 78 556 86 590 108 L598 118 Z" fill="url(#refl)" opacity=".45"/>
+        <!-- pillars + seams -->
+        <rect x="456" y="68" width="14" height="56" fill="#0A0D12"/>
+        <path d="M294 128 L304 214" stroke="#0A0D12" stroke-width="2" opacity=".7"/>
+        <path d="M466 128 L474 214" stroke="#0A0D12" stroke-width="2" opacity=".7"/>
+        <rect x="372" y="150" width="30" height="6" rx="3" fill="#3B4452"/><rect x="540" y="152" width="30" height="6" rx="3" fill="#3B4452"/>
+        <!-- mirror -->
+        <path d="M262 112 C262 104 288 102 292 110 L290 122 L266 122 Z" fill="#1B2029"/>
+        <!-- lights -->
+        <path d="M46 172 L94 150 L98 160 L52 182 Z" fill="#DCEFFF" opacity=".9"/>
+        <path d="M738 150 L764 160 L762 176 L734 168 Z" fill="#FF3B3B" opacity=".85"/>
+        <!-- wheels -->
+        <g><circle cx="182" cy="232" r="46" fill="#07090D"/><circle cx="182" cy="232" r="30" fill="url(#rimG)"/><g stroke="#1C222B" stroke-width="7" stroke-linecap="round"><line x1="182" y1="232" x2="182" y2="206"/><line x1="182" y1="232" x2="206" y2="224"/><line x1="182" y1="232" x2="197" y2="254"/><line x1="182" y1="232" x2="167" y2="254"/><line x1="182" y1="232" x2="158" y2="224"/></g><circle cx="182" cy="232" r="7" fill="#C9D1DC"/><path d="M166 214 a22 22 0 0 0 -8 24" stroke="#D8322E" stroke-width="5" fill="none"/></g>
+        <g><circle cx="612" cy="232" r="46" fill="#07090D"/><circle cx="612" cy="232" r="30" fill="url(#rimG)"/><g stroke="#1C222B" stroke-width="7" stroke-linecap="round"><line x1="612" y1="232" x2="612" y2="206"/><line x1="612" y1="232" x2="636" y2="224"/><line x1="612" y1="232" x2="627" y2="254"/><line x1="612" y1="232" x2="597" y2="254"/><line x1="612" y1="232" x2="588" y2="224"/></g><circle cx="612" cy="232" r="7" fill="#C9D1DC"/><path d="M596 214 a22 22 0 0 0 -8 24" stroke="#D8322E" stroke-width="5" fill="none"/></g>
+        <ellipse cx="400" cy="286" rx="340" ry="6" fill="url(#ground)"/>
       </svg>
-      <label class="sr" for="vlt">Visible light transmission</label>
-      <input class="slider" id="vlt" type="range" min="5" max="70" step="1" value="35" aria-valuetext="35 percent VLT">
+      
+      <input class="slider" id="vlt" type="range" min="5" max="70" step="1" value="40" aria-valuetext="35 percent VLT" aria-label="Tint darkness, drag right for darker">
       <div class="ticks" aria-hidden="true"><span>70%</span><span>50%</span><span>35%</span><span>20%</span><span>5%</span></div>
       <div class="veh" role="group" aria-label="Vehicle type"><button type="button" data-v="sedan" aria-pressed="true">Sedan · coupe</button><button type="button" data-v="suv" aria-pressed="false">SUV · truck · van</button></div>
       <div class="lab-read" aria-live="polite">
@@ -662,7 +681,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
   const SERIES=[['Carbon','35%',35,[3,5,15,20,35,40,50,70]],['King Pro','48–50%',50,[5,15,20,35,50]],['Carbon Plus','62%',62,[5,15,20,35,40,50]],['Shield IR','82–87%',87,[5,15,20,35,40,50]],['Shield Plus','93–95%',95,[5,15,20,35,40,50,70]]];
   let s=3,veh='sedan';
   const look=v=>v>=60?'Nearly clear':v>=45?'Light':v>=30?'Factory+':v>=15?'Dark':'Limo';
-  const render=()=>{const v=+vlt.value;const a=1-(v/100);g1.setAttribute('fill-opacity',(a*.92).toFixed(3));g2.setAttribute('fill-opacity',(a*.92).toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='All windows';rL.className='ok'}else if(veh==='suv'){rL.textContent='Behind front doors';rL.className='ok'}else{rL.textContent='Too dark';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%';const sh=SERIES[s][3];$('#rShades').textContent=sh.join(' · ');const near=sh.reduce((a,b)=>Math.abs(b-v)<Math.abs(a-v)?b:a);$('#rOffer').textContent=sh.includes(v)?v+'% is a stock shade':'closest stock shade is '+near+'%'};
+  const render=()=>{const v=75-(+vlt.value);const a=Math.pow(1-(v/100),1.4)*.95;g1.setAttribute('fill-opacity',a.toFixed(3));g2.setAttribute('fill-opacity',a.toFixed(3));rV.textContent=v+'% VLT';vlt.setAttribute('aria-valuetext',v+' percent VLT');if(v>=27){rL.textContent='All windows';rL.className='ok'}else if(veh==='suv'){rL.textContent='Behind front doors';rL.className='ok'}else{rL.textContent='Too dark';rL.className='warn'}rK.textContent=look(v);rH.textContent=SERIES[s][1];hb.style.width=SERIES[s][2]+'%';const sh=SERIES[s][3];$('#rShades').textContent=sh.join(' · ');const near=sh.reduce((a,b)=>Math.abs(b-v)<Math.abs(a-v)?b:a);$('#rOffer').textContent=sh.includes(v)?v+'% is a stock shade':'closest stock shade is '+near+'%'};
   vlt.addEventListener('input',render);
   $$('.series button').forEach(b=>b.addEventListener('click',()=>{$$('.series button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');s=+b.dataset.s;render()}));
   $$('.veh button').forEach(b=>b.addEventListener('click',()=>{$$('.veh button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');veh=b.dataset.v;render()}));
