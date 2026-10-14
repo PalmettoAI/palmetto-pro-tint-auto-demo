@@ -111,8 +111,7 @@ p{margin:0}
 .lab-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.6rem}
 .lab-head h2{font-size:1rem;font-weight:700;letter-spacing:.02em}
 .lab-head .tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);font-family:var(--display)}
-.car{width:100%;height:auto;display:block;margin:.4rem 0 .6rem}
-.car .glass{transition:fill .25s}
+.carimg{position:relative;margin:.6rem 0 .8rem}.carimg img{width:100%;height:auto;display:block;position:relative;z-index:1;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}.carimg svg{position:absolute;inset:0;width:100%;height:100%;z-index:2}.carimg .glass{transition:fill-opacity .2s}.carglow{position:absolute;left:6%;right:6%;bottom:-4px;height:14px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(30,167,255,.6),rgba(30,167,255,0) 70%);filter:blur(3px);z-index:0}
 .lab-read{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:.6rem 0 1rem}
 .read{background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:14px;padding:.7rem .8rem}
 .read small{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:var(--display)}
@@ -165,7 +164,7 @@ p{margin:0}
 .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .price{border:1px solid var(--border-2);border-radius:var(--r);padding:1.6rem;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));position:relative;overflow:hidden;transition:transform .4s var(--ease),border-color .4s}
 .price:hover{transform:translateY(-6px);border-color:rgba(30,167,255,.5)}
-.price svg{width:100%;height:auto;color:var(--ink-2);margin-bottom:1rem}
+.price .pic{height:132px;display:flex;align-items:flex-end;justify-content:center;margin:0 0 1.1rem}.price .pic img{max-height:132px;width:auto;max-width:100%;height:auto;filter:drop-shadow(0 14px 16px rgba(0,0,0,.55));transition:transform .5s var(--ease)}.price:hover .pic img{transform:translateY(-4px) scale(1.03)}
 .price .amt{font-family:var(--display);font-size:2.4rem;font-weight:800;letter-spacing:-.03em;line-height:1}
 .price .amt small{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.1em;display:block;margin-bottom:.3rem}
 .price h3{margin:.4rem 0 .3rem}
@@ -359,48 +358,11 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
         <h2 id="labTitle">Shade Lab</h2>
         <span class="tag">Drag to preview</span>
       </div>
-      <svg class="car" viewBox="0 0 800 300" role="img" aria-label="Side profile of a sports sedan showing the selected tint darkness on its side windows; the windshield stays clear as South Carolina law requires">
-        <defs>
-          <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A4250"/><stop offset=".35" stop-color="#1B2029"/><stop offset=".7" stop-color="#0E1117"/><stop offset="1" stop-color="#05070A"/></linearGradient>
-          <linearGradient id="glassBase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6F1FB"/><stop offset=".5" stop-color="#A9C9E8"/><stop offset="1" stop-color="#D3E4F4"/></linearGradient>
-          <linearGradient id="refl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-          <linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1EA7FF" stop-opacity="0"/><stop offset=".5" stop-color="#1EA7FF" stop-opacity=".5"/><stop offset="1" stop-color="#1EA7FF" stop-opacity="0"/></linearGradient>
-          <radialGradient id="rimG" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#C9D1DC"/><stop offset=".6" stop-color="#6B7482"/><stop offset="1" stop-color="#2A313C"/></radialGradient>
-          <linearGradient id="shoulder" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".22"/><stop offset=".8" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        </defs>
-        <!-- body -->
-        <path d="M58 222 C42 222 34 206 38 190 L48 170 C66 148 110 136 176 130 L246 124 C286 84 346 66 428 66 C506 66 562 78 612 112 C650 130 700 142 732 150 C762 156 772 182 766 206 L758 222 L664 226 A52 52 0 0 1 560 226 L234 226 A52 52 0 0 1 130 226 Z" fill="url(#bodyG)"/>
-        <!-- shoulder line highlight -->
-        <path d="M70 158 C160 148 420 140 740 156" fill="none" stroke="url(#shoulder)" stroke-width="2.5"/>
-        <!-- rocker -->
-        <path d="M118 216 L646 216 L644 224 L124 224 Z" fill="#05070A" opacity=".8"/>
-        <!-- windshield: clear with light strip (not tintable) -->
-        <path d="M256 124 L338 72 L354 72 L292 124 Z" fill="url(#glassBase)"/>
-        <path d="M256 124 L338 72 L354 72 L292 124 Z" fill="#0B1118" fill-opacity=".18"/>
-        <!-- front door glass (tintable) -->
-        <path d="M300 122 L356 76 L456 70 L456 122 Z" fill="url(#glassBase)"/>
-        <path d="M300 122 L356 76 L456 70 L456 122 Z" class="glass" fill="#0B1118" fill-opacity=".8" id="g1"/>
-        <!-- rear quarter + rear glass (tintable) -->
-        <path d="M470 122 L470 72 C520 72 566 80 604 108 L630 124 Z" fill="url(#glassBase)"/>
-        <path d="M470 122 L470 72 C520 72 566 80 604 108 L630 124 Z" class="glass" fill="#0B1118" fill-opacity=".8" id="g2"/>
-        <!-- reflections -->
-        <path d="M312 118 L360 80 L420 76 L404 118 Z" fill="url(#refl)" opacity=".55"/>
-        <path d="M486 118 L486 78 C520 78 556 86 590 108 L598 118 Z" fill="url(#refl)" opacity=".45"/>
-        <!-- pillars + seams -->
-        <rect x="456" y="68" width="14" height="56" fill="#0A0D12"/>
-        <path d="M294 128 L304 214" stroke="#0A0D12" stroke-width="2" opacity=".7"/>
-        <path d="M466 128 L474 214" stroke="#0A0D12" stroke-width="2" opacity=".7"/>
-        <rect x="372" y="150" width="30" height="6" rx="3" fill="#3B4452"/><rect x="540" y="152" width="30" height="6" rx="3" fill="#3B4452"/>
-        <!-- mirror -->
-        <path d="M262 112 C262 104 288 102 292 110 L290 122 L266 122 Z" fill="#1B2029"/>
-        <!-- lights -->
-        <path d="M46 172 L94 150 L98 160 L52 182 Z" fill="#DCEFFF" opacity=".9"/>
-        <path d="M738 150 L764 160 L762 176 L734 168 Z" fill="#FF3B3B" opacity=".85"/>
-        <!-- wheels -->
-        <g><circle cx="182" cy="232" r="46" fill="#07090D"/><circle cx="182" cy="232" r="30" fill="url(#rimG)"/><g stroke="#1C222B" stroke-width="7" stroke-linecap="round"><line x1="182" y1="232" x2="182" y2="206"/><line x1="182" y1="232" x2="206" y2="224"/><line x1="182" y1="232" x2="197" y2="254"/><line x1="182" y1="232" x2="167" y2="254"/><line x1="182" y1="232" x2="158" y2="224"/></g><circle cx="182" cy="232" r="7" fill="#C9D1DC"/><path d="M166 214 a22 22 0 0 0 -8 24" stroke="#D8322E" stroke-width="5" fill="none"/></g>
-        <g><circle cx="612" cy="232" r="46" fill="#07090D"/><circle cx="612" cy="232" r="30" fill="url(#rimG)"/><g stroke="#1C222B" stroke-width="7" stroke-linecap="round"><line x1="612" y1="232" x2="612" y2="206"/><line x1="612" y1="232" x2="636" y2="224"/><line x1="612" y1="232" x2="627" y2="254"/><line x1="612" y1="232" x2="597" y2="254"/><line x1="612" y1="232" x2="588" y2="224"/></g><circle cx="612" cy="232" r="7" fill="#C9D1DC"/><path d="M596 214 a22 22 0 0 0 -8 24" stroke="#D8322E" stroke-width="5" fill="none"/></g>
-        <ellipse cx="400" cy="286" rx="340" ry="6" fill="url(#ground)"/>
-      </svg>
+      <div class="carimg">
+        <img src="assets/img/shade-car.webp" alt="Grey sedan in side profile with the selected tint applied to its side windows" width="1280" height="448" decoding="async" fetchpriority="high">
+        <svg viewBox="0 0 1280 448" aria-hidden="true" focusable="false"><polygon id="g1" class="glass" points="436,136 452,112 524,50 640,40 650,136" fill="#070A0F" fill-opacity=".52"/><polygon id="g2" class="glass" points="664,136 662,42 845,44 905,72 950,118 972,136" fill="#070A0F" fill-opacity=".52"/></svg>
+        <div class="carglow" aria-hidden="true"></div>
+      </div>
       
       <input class="slider" id="vlt" type="range" min="5" max="70" step="1" value="40" aria-valuetext="35 percent VLT" aria-label="Tint darkness, drag right for darker">
       <div class="ticks" aria-hidden="true"><span>70%</span><span>50%</span><span>35%</span><span>20%</span><span>5%</span></div>
@@ -478,22 +440,22 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border);margin-top:var(--s
     </div>
     <div class="price-grid">
       <article class="price rv">
-        <svg viewBox="0 0 120 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 30h104M18 30l12-16h48l16 16M30 30v6M94 30v6"/><path d="M34 14l-8 12h52l-8-12z" fill="currentColor" opacity=".25"/></svg>
+        <div class="pic"><img src="assets/img/price-front2.webp" alt="Grey sedan with the front door window tinted and highlighted" loading="lazy" width="1256" height="420"></div>
         <div class="amt"><small>Starting at</small>$99</div><h3>Front two windows</h3><p>Match the factory rear tint. About 20 minutes.</p>
         <button class="btn btn-ghost js-book" type="button">Book this</button>
       </article>
       <article class="price rv d1">
-        <svg viewBox="0 0 120 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 32h108M14 32l14-18h52l20 18M26 32v6M98 32v6"/><path d="M30 14l-10 16h66l-14-16z" fill="currentColor" opacity=".25"/></svg>
+        <div class="pic"><img src="assets/img/price-coupe.webp" alt="Blue two-door coupe with tinted windows" loading="lazy" width="1256" height="420"></div>
         <div class="amt"><small>Starting at</small>$249</div><h3>Two-door car</h3><p>All side windows and the back glass.</p>
         <button class="btn btn-ghost js-book" type="button">Book this</button>
       </article>
       <article class="price rv d2">
-        <svg viewBox="0 0 120 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 32h108M14 32l12-18h62l18 18M26 32v6M98 32v6M56 14v16"/><path d="M28 14l-10 16h74l-12-16z" fill="currentColor" opacity=".25"/></svg>
+        <div class="pic"><img src="assets/img/price-sedan.webp" alt="Grey four-door sedan with all side windows tinted" loading="lazy" width="1256" height="420"></div>
         <div class="amt"><small>Starting at</small>$299</div><h3>Four-door car</h3><p>Sedans and hatchbacks. Full wrap-around.</p>
         <button class="btn btn-ghost js-book" type="button">Book this</button>
       </article>
       <article class="price rv d3">
-        <svg viewBox="0 0 120 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 34h108M12 34V16c0-4 2-6 6-6h66l22 14v10M24 34v6M96 34v6M52 10v24"/><path d="M14 16h68l20 12H14z" fill="currentColor" opacity=".25"/></svg>
+        <div class="pic"><img src="assets/img/price-suv.webp" alt="White SUV with dark rear windows and lighter front windows" loading="lazy" width="1256" height="420"></div>
         <div class="amt"><small>Starting at</small>$349</div><h3>SUV &amp; truck</h3><p>Big glass, same hour. Dark rears allowed in SC.</p>
         <button class="btn btn-ghost js-book" type="button">Book this</button>
       </article>
